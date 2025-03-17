@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dubai to the Stars</title>
+    <style>
+        body { background: #000; color: #fff; font-family: Arial, sans-serif; text-align: center; }
+        a { color: #0ff; text-decoration: none; margin: 0 10px; }
+        a:hover { text-decoration: underline; }
+        .container { margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dubai to the Stars – The Ultimate Space Travel Experience</h1>
+        <p>Welcome to the future of travel! Explore our features and book your journey today.</p>
+        <nav>
+            <a href="{{ url_for('book') }}">Book a Trip</a>
+            <a href="{{ url_for('pricing') }}">Pricing & Packages</a>
+            <a href="{{ url_for('accommodations') }}">Accommodations</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        </nav>
+    </div>
+</body>
+</html>
