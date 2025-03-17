@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Your Space Journey</title>
+    <style>
+        body { background: #111; color: #eee; font-family: Arial, sans-serif; text-align: center; }
+        .container { margin-top: 50px; }
+        input, select { padding: 10px; margin: 10px; width: 200px; }
+        button { padding: 10px 20px; margin-top: 20px; background: #0ff; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Trip Scheduling & Booking</h2>
+        <form method="post">
+            <div>
+                <label for="departure_date">Departure Date:</label>
+                <input type="date" name="departure_date" required>
+            </div>
+            <div>
+                <label for="destination">Destination:</label>
+                <select name="destination">
+                    <option value="Space Station Alpha">Space Station Alpha</option>
+                    <option value="Lunar Hotel">Lunar Hotel</option>
+                    <option value="Mars Resort">Mars Resort</option>
+                </select>
+            </div>
+            <div>
+                <label for="seat_class">Seat Class:</label>
+                <select name="seat_class">
+                    <option value="Luxury Cabin">Luxury Cabin</option>
+                    <option value="Economy Shuttle">Economy Shuttle</option>
+                    <option value="VIP Zero-Gravity">VIP Zero-Gravity</option>
+                </select>
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
+        <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+    </div>
+</body>
+</html>
