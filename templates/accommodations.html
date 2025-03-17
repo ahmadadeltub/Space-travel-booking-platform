@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accommodations in Space</title>
+    <style>
+        body { background: #333; color: #fff; font-family: Arial, sans-serif; text-align: center; }
+        .container { margin-top: 50px; }
+        .accommodation { border: 1px solid #0ff; padding: 20px; margin: 20px; display: inline-block; width: 250px; }
+        h3 { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Accommodation Recommendations</h2>
+        {% for acc in accommodations %}
+        <div class="accommodation">
+            <h3>{{ acc.name }}</h3>
+            <p>Type: {{ acc.type }}</p>
+            <p>{{ acc.description }}</p>
+        </div>
+        {% endfor %}
+        <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+    </div>
+</body>
+</html>
