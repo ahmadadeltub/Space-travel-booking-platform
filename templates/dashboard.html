@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <style>
+        body { background: #444; color: #fff; font-family: Arial, sans-serif; text-align: center; }
+        .container { margin-top: 50px; }
+        .booking { border: 1px solid #0ff; padding: 20px; margin: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Dashboard</h2>
+        {% if bookings %}
+            <h3>Your Bookings:</h3>
+            {% for booking in bookings %}
+            <div class="booking">
+                <p><strong>Departure:</strong> {{ booking.departure_date }}</p>
+                <p><strong>Destination:</strong> {{ booking.destination }}</p>
+                <p><strong>Seat Class:</strong> {{ booking.seat_class }}</p>
+            </div>
+            {% endfor %}
+            {% if countdown %}
+            <h3>Next Launch Countdown:</h3>
+            <p>{{ countdown.days }} days, {{ countdown.seconds // 3600 }} hours remaining</p>
+            {% else %}
+            <p>No upcoming departures.</p>
+            {% endif %}
+        {% else %}
+            <p>You have no bookings yet.</p>
+        {% endif %}
+        <h3>Travel Tip</h3>
+        <p>{{ travel_tips }}</p>
+        <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+    </div>
+</body>
+</html>
